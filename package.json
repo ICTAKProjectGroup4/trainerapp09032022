@@ -11,7 +11,7 @@
     "type": "git",
     "url": "yes"
   },
-  "author": "smitha",
+  "author": "ictakprojectgroup4",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",

@@ -311,9 +311,20 @@ app.post('/api/schedule/:_id', (req, res) => {
         
             if(j>0){
             console.log("overlap");
-            return res.status(409).send("Overlap");
+             res.status(409).send("Overlap");
+            // res.status(201).send({ status: 'Overlap' })
         }
         else{
+
+            const update = {id,name,course, batch, startDate, endDate, meeting, startTime, endTime };
+            // console.log(update);
+            ScheduleInfo.insertMany(update)
+            .then(function(users){
+                // res.json(users)
+                console.log("status", "success");
+                res.status(200).send("Success");
+            });
+            
             let from = `ICT Academy <ictakprojectgroup@gmail.com>`
     let body ={
         from: from,
@@ -348,12 +359,7 @@ app.post('/api/schedule/:_id', (req, res) => {
         // console.log(result);
         console.log("email sent");
     })
-    const update = {id,name,course, batch, startDate, endDate, meeting, startTime, endTime };
-    // console.log(update);
-    ScheduleInfo.insertMany(update)
-    .then(function(users){
-        res.json(users)
-    });
+   
         }
     });
     

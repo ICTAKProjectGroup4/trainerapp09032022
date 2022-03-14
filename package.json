@@ -2,8 +2,9 @@
   "name": "trainer-app-backend",
   "version": "1.0.0",
   "description": "",
+  "proxy": "http://localhost:5000",
   "main": "index.js",
-  "scripts": {
+   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

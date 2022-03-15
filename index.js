@@ -287,7 +287,7 @@ app.get('/api/search/:id', (req, res) => {
 });
 
 //Batch allocation
-app.post('/api/schedule/:_id', (req, res) => {
+app.post('/api/schedule/:id', (req, res) => {
     const { id, name, email, course, batch, startDate, endDate, meeting, startTime, endTime } = req.body;
     let j=0;
     // two ranges overlap condition
@@ -313,6 +313,7 @@ app.post('/api/schedule/:_id', (req, res) => {
             console.log("overlap");
              res.status(409).send("Overlap");
             // res.status(201).send({ status: 'Overlap' })
+            console.log(res.statusCode);
         }
         else{
 
